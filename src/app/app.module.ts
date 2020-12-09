@@ -6,9 +6,8 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 // import { TestComponent } from './test/test.component';
 import { SelectRequiredValidatorDirective } from './validators/select-required-validator.directive';
-import { Comments } from '../app/models/comments.model';
-import { ListPostesComponent } from './list-postes/list-postes.component';
-import { CreateComponent } from './create/create.component'
+import { ListPostesComponent } from './forTest/list-postes/list-postes.component';
+import { CreateComponent } from './forTest/create/create.component';
 
 
 @NgModule({
@@ -17,8 +16,6 @@ import { CreateComponent } from './create/create.component'
     SelectRequiredValidatorDirective,
     ListPostesComponent,
     CreateComponent,
-    
-    
   ],
   imports: [
     BrowserModule,
@@ -26,7 +23,7 @@ import { CreateComponent } from './create/create.component'
     FormsModule,
     AppRoutingModule,
     HttpClientModule,
-    
+
   ],
   providers: [],
   bootstrap: [AppComponent]
