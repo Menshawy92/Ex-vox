@@ -4,3 +4,42 @@
 
 @import 'tailwindcss/utilities';
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+@layer base {
+  html[lang='en'] {
+    font-family: Roboto, sans-serif;
+  }
+}
+
+.link-header {
+  @apply flex;
+  @apply items-center;
+  @apply px-3;
+  @apply py-4;
+  @apply text-white;
+  @apply capitalize;
+  @apply text-base;
+  @apply duration-300;
+  @apply transition;
+  @apply ease-in-out;
+  @apply relative;
+}
+
+.link-header:hover {
+  @apply bg-indigo-800;
+}
+
+.btn:focus {
+  @apply outline-none;
+}
+// .link-header::before{
+//   background: no-repeat url('assets/images/chevron-down.svg');
+//   background-size: 100% auto;
+//   width: 18px;
+//   height: 6px;
+//   pointer-events: none;
+//   transition: all 0.18s ease-out 0.18s;
+//   content: '';
+//   position: absolute
+// }

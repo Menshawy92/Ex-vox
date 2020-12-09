@@ -1,0 +1,136 @@
+<form>
+    <input type="text" [(ngModel)]="title" placeholder="name" class="border border-gray-900 p-4">
+
+<button (click)="saveComment()" class="bg-blue-500 p-4">test</button>
+</form>
+
+{{title}}
+
+<div class="container mt-4">
+    <form #form="ngForm" (ngSubmit)="saveComment(form)">
+        <div class="from-group bg-gray-100 p-3 rounded flex items-center" [class.has-error]="form.invalid">
+            <label for="text" class="control-label mr-3 w-36 block">Titel</label>
+            <input id="text" name="title" required type="text" class="form-control" class="border py-2 px-3 w-1/2 mr-2"
+                >
+            <span class="help-block text-red-500" *ngIf="form.errors?.required">
+                title is required
+            </span>
+            <span class="help-block text-red-500" *ngIf="form.errors?.pattern && form.touched">
+                title is Invalid
+            </span>
+        </div>
+
+        <div class="from-group bg-gray-100 p-3 rounded flex items-center" [class.has-error]="form.invalid">
+            <label for="text" class="control-label mr-3 w-36 block">Titel</label>
+            <input id="text" name="body" required type="text" class="form-control" class="border py-2 px-3 w-1/2 mr-2"
+                >
+            <span class="help-block text-red-500" *ngIf="form.errors?.required">
+                body is required
+            </span>
+            <span class="help-block text-red-500" *ngIf="form.errors?.pattern && form.touched">
+                body is Invalid
+            </span>
+        </div>
+
+
+        <!-- <div [class.has-error]="contactPreference.invalid"
+            class="form-group bg-gray-100 p-3 rounded flex flex-col items-start justify-start mt-2">
+            <label class="Contact Preference"></label>
+            <div class="flex items-center space-x-3">
+                <div>
+                    <label for="">
+                        <input type="radio" required #contactPreference="ngModel" name="contactPreference" value="email"
+                            [(ngModel)]="employee.email"> Email
+                    </label>
+                </div>
+                <div>
+                    <label for="">
+                        <input type="radio" required #contactPreference="ngModel" name="contactPreference" value="phone"
+                            [ngModel]="employee.phoneNumber"> Phone
+                    </label>
+                </div>
+            </div>
+            <span class="help-block block text-red-500 text-xs mb-3 mt-3" *ngIf="contactPreference.errors?.required">
+                Contact Preference is required
+            </span>
+            asxs
+            Contact Preference Selected Value : {{ contactPreference.value }}
+        </div>
+
+
+        <div [class.has-error]="isActive.invalid && isActive.touched"
+            class="form-group bg-gray-100 p-3 rounded flex flex-col items-start justify-start mt-2">
+            <div>
+                <label for="">
+                    <input type="checkbox" required #isActive="ngModel" name="isActive" [(ngModel)]="employee.isActive">
+                    Email
+                </label>
+            </div>
+            <span class="help-block block text-red-500 text-xs mb-3 mt-3"
+                *ngIf="isActive.errors?.required && isActive.touched">
+                Is Active is required
+            </span>
+        </div>
+
+
+        <div [class.has-error]="department.errors?.defaultSelected && department.touched"
+            class="form-group bg-gray-100 p-3 rounded flex flex-col items-start justify-start mt-2">
+            <div class="w-1/2">
+                <select appSelectRequiredValidator id="department" required #department="ngModel" name="department"
+                    [(ngModel)]="employee.department" class="border py-2 px-3 w-full mr-2">
+                    <option value="-1">Select Department</option>
+                    <option *ngFor="let dept of departments" [value]="dept.id">
+                        {{dept.name}}
+                    </option>
+                </select>
+            </div>
+            <span class="help-block block text-red-500 text-xs mb-3 mt-3"
+                *ngIf="department.errors?.defaultSelected && department.touched">
+                Is Active is required
+            </span>
+            Contact Preference Selected Value : {{ department.value }}
+        </div> -->
+
+        <button class="py-3 px-6 text-white rounded bg-blue-600 hover:bg-blue-900 mt-3"
+            [disabled]="!form.valid">Submit</button>
+    </form>
+</div>
+
+<!-- <div *ngFor="let com of commenta">
+    {{com.title}}
+</div> -->
+<!-- <form>
+    <input id="email" required type="text" class="form-control" [(ngModel)]="employee.name" #name="ngModel" name="name"
+        class="border py-2 px-3 w-1/2 mr-2">
+    <button (click)="save()">asd</button>
+</form> -->
+
+<!-- <div class="relative bg-teal-500 w-48 h-48 mx-auto mt-8">
+    <div class="absolute top-4 bg-black w-full text-white">
+        <p>{{com.title}}</p>
+    </div>
+</div> -->
+
+<!-- BoxBorderHover -->
+<!-- <div>
+    <div class="absolute top-0 left-auto right-0 w-full h-auto">
+        <div
+            class="border-t border-blue-600 h-0 w-0 group-hover:w-full group-hover:h-full transition-sizing ease-in duration-700 delay-150">
+        </div>
+    </div>
+    <div class="absolute top-0 left-0 w-auto h-full">
+        <div
+            class="border-l border-blue-600 h-0 w-0 group-hover:w-full group-hover:h-full transition-height ease-in duration-700 delay-150">
+        </div>
+    </div>
+    <div class="absolute top-0 right-0 w-full h-full" dir="rtl">
+        <div
+            class="border-r border-blue-600 h-0 w-0 group-hover:w-full group-hover:h-full transition-sizing ease-in duration-700 delay-700">
+        </div>
+    </div>
+    <div class="absolute bottom-0 left-auto right-0 w-full h-auto " dir="rtl">
+        <div
+            class="border-b border-blue-600 h-0 w-0 group-hover:w-full group-hover:h-full transition-sizing ease-in duration-700 delay-700">
+        </div>
+    </div>
+</div> -->

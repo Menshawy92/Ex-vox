@@ -1,0 +1,27 @@
+<div class="container mt-4">
+    <form #form="ngForm" (ngSubmit)="saveComment()">
+        <div class="from-group bg-gray-100 p-3 rounded flex items-center" [class.has-error]="form.invalid">
+            <label for="text" class="control-label mr-3 w-36 block">Titel</label>
+            <input id="text" name="title" required type="text" #title="ngModel" [(ngModel)]="employee.title" class="form-control" class="border py-2 px-3 w-1/2 mr-2">
+            <span class="help-block text-red-500" *ngIf="form.errors?.required">
+                title is required
+            </span>
+            <span class="help-block text-red-500" *ngIf="form.errors?.pattern && form.touched">
+                title is Invalid
+            </span>
+        </div>
+
+        <div class="from-group bg-gray-100 p-3 rounded flex items-center" [class.has-error]="form.invalid">
+            <label for="text" class="control-label mr-3 w-36 block">Titel</label>
+            <input id="text" name="body" required type="text" class="form-control" class="border py-2 px-3 w-1/2 mr-2" #body="ngModel" [(ngModel)]="employee.body">
+            <span class="help-block text-red-500" *ngIf="form.errors?.required">
+                body is required
+            </span>
+            <span class="help-block text-red-500" *ngIf="form.errors?.pattern && form.touched">
+                body is Invalid
+            </span>
+        </div>
+        <button class="py-3 px-6 text-white rounded bg-blue-600 hover:bg-blue-900 mt-3"
+            [disabled]="!form.valid">Submit</button>
+    </form>
+</div>
